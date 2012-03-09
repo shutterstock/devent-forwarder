@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+var forwarder = require('../lib/forwarder')
+	, fs = require('fs')
+	, nomnom = require('nomnom')
+	, util = require('util');
+
+var opts = nomnom
+	.opts({
+		'http-port': {
+			string: '--http-port',
+			default: 7664
+		},
+		'udp-port': {
+			string: '--udp-port',
+			default: 7665
+		},
+		'zmq-port': {
+			string: '--zmq-port',
+			default: 7666
+		},
+		'healthcheck-port': {
+			string: '--healthcheck-port',
+			default: 8080
+		},
+		'zmq-upstream': {
+			string: '--zmq-upstream',
+			default: 'tcp://127.0.0.1:6666'
+		}
+	}).parseArgs();
+
+forwarder.pusher.connect(opts['zmq-upstream']);
+
+forwarder.http.setPusher(forwarder.pusher);
+forwarder.http.server.listen(opts['http-port']);
+util.log('forwarder:http listening on ' + opts['http-port']);
+
+forwarder.udp.setPusher(forwarder.pusher);
+forwarder.udp.server.on('listening', function() {
+	util.log('forwarder:udp listening on ' + opts['udp-port']);
+});
+forwarder.udp.server.bind(opts['udp-port']);
+
+forwarder.zmq.setPusher(forwarder.pusher);
+forwarder.zmq.server.listen('tcp://*:' + opts['zmq-port'])
+util.log('forwarder:zmq listening on ' + opts['zmq-port']);
