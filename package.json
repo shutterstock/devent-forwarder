@@ -1,14 +1,17 @@
 {
-    "name": "devent-forwarder"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "nomnom": ">= 1.x.x"
-    , "zmq": "= 2.0.0"
-  }
-  , "engine": {	
+  "name": "devent-forwarder",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "nomnom": ">= 1.x.x",
+    "zmq": "= 2.0.0"
+  },
+  "engine": {
     "node": ">= 0.4.x"
-  }
-  , "main": "lib/forwarder"
-  , "bin": { "devent-forwarder": "./bin/forwarder" }
+  },
+  "main": "lib/forwarder",
+  "bin": {
+    "devent-forwarder": "./bin/forwarder"
+  },
+  "license": "MIT"
 }
