@@ -9,11 +9,11 @@ them on to the devent-hub.
 
 ## Clients
 
-  http:
+### http
 
     curl -d '{"bob": "ross"}' -H "Content-Type: application/json"  http://localhost:7664/painters.best
 
- udp: 
+### udp
 
     use IO::Socket;
     use strict;
@@ -27,7 +27,7 @@ them on to the devent-hub.
     $sock->send( qq[painters.best\n{"bob": "ross"}] )
       or die "Send error: $!\n";
 
-  zmq:
+### zmq
 
     dr-send 'tcp://localhost:7666' painters.best <<EOF
       {"bob": "ross"}
@@ -35,7 +35,11 @@ them on to the devent-hub.
 
 ## Authors
 
-This library was developed by Douglas Hunter at [Shutterstock](http://www.shutterstock.com)
+This library was developed by Douglas Hunter at [Shutterstock](http://www.shutterstock.com).
+
+## Contribute
+
+Please do! Check out [the CONTRIBUTING guide](CONTRIBUTING.md).
 
 ## License
 

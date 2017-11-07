@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "description": "Forward Devent messages via HTTP, UDP or ZMQ",
-  "keywords": [],
+  "keywords": ["devent", "http", "udp", "zmq"],
   "homepage": "https://github.com/shutterstock/devent-forwarder",
   "bugs": "https://github.com/shutterstock/devent-forwarder/issues",
   "repository": {
@@ -23,6 +23,6 @@
     "url": "https://github.com/shutterstock/devent-forwarder.git"
   },
   "contributors": [
-    null
+    "David Hunter"
   ]
 }
