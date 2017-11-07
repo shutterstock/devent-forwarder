@@ -13,5 +13,16 @@
   "bin": {
     "devent-forwarder": "./bin/forwarder"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "description": "Forward Devent messages via HTTP, UDP or ZMQ",
+  "keywords": [],
+  "homepage": "https://github.com/shutterstock/devent-forwarder",
+  "bugs": "https://github.com/shutterstock/devent-forwarder/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shutterstock/devent-forwarder.git"
+  },
+  "contributors": [
+    null
+  ]
 }
