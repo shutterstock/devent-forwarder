@@ -1,7 +1,6 @@
 {
   "name": "devent-forwarder",
-  "version": "0.0.2",
-  "private": true,
+  "version": "0.0.3",
   "dependencies": {
     "nomnom": ">= 1.x.x",
     "zmq": "= 2.0.0"
@@ -13,5 +12,21 @@
   "bin": {
     "devent-forwarder": "./bin/forwarder"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "description": "Forward Devent messages via HTTP, UDP or ZMQ",
+  "keywords": [
+    "devent",
+    "http",
+    "udp",
+    "zmq"
+  ],
+  "homepage": "https://github.com/shutterstock/devent-forwarder",
+  "bugs": "https://github.com/shutterstock/devent-forwarder/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shutterstock/devent-forwarder.git"
+  },
+  "contributors": [
+    "David Hunter"
+  ]
 }
